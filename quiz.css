@@ -1,0 +1,216 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    --bleu-clair: #6a89cc;
+    --bleu-sombre: #4a69bd;
+    --bleu-roi: #1e3799;
+    --jaune: #f6b93b;
+    --orange: #eb2f06;
+    --bordeaux: #b71540;
+    --vert: #78e08f;
+}
+
+header {
+    height: calc(100vh - 65px);
+    background-color: var(--bleu-clair);
+    padding-top: 65px;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: var(--bordeaux);
+    box-shadow: 0 4px 4px #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav1 {
+    /* border: 1px solid #fff; */
+    height: 90%;
+    width: 25%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu {
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid #fff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu span {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+}
+
+.nav2 {
+    /* border: 1px solid #fff; */
+    height: 90%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav2 h3 {
+    color: #fff;
+}
+
+.nav3 {
+    /* border: 1px solid #fff; */
+    height: 90%;
+    width: 25%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.scoreJoueur {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.nomJoueur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    /* border: 1px solid #fff; */
+    color:#fff;
+}
+
+.container-question {
+    height: 22%;
+    width: 90%;
+    margin: auto;
+    /* border: 1px solid #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-question {
+    width: 95%;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: var(--bleu-sombre);
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+}
+
+.container-reponses1 {
+    height: 25%;
+    width: 95%;
+    margin: auto;
+    /* border: 1px solid #fff; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-reponses2 {
+    height: 25%;
+    width: 95%;
+    margin: auto;
+    /* border: 1px solid #fff; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bloc-reponse1 {
+    width: 40%;
+    height: 85%;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    background-color: var(--bleu-sombre);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+    cursor: pointer;
+}
+
+.bloc-reponse1:active {
+    box-shadow: 1px 1px 4px #000;
+}
+
+.bloc-reponse2 {
+    width: 40%;
+    height: 85%;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    background-color: var(--bleu-sombre);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+    cursor: pointer;
+}
+
+.bloc-reponse2:active {
+    box-shadow: 1px 1px 4px #000;
+}
+
+.bloc-reponse3 {
+    width: 40%;
+    height: 85%;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    background-color: var(--bleu-sombre);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+    cursor: pointer;
+}
+
+.bloc-reponse3:active {
+    box-shadow: 1px 1px 4px #000;
+}
+
+.bloc-reponse4 {
+    width: 40%;
+    height: 85%;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    background-color: var(--bleu-sombre);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+    cursor: pointer;
+}
+
+.bloc-reponse4:active {
+    box-shadow: 1px 1px 4px #000;
+}
