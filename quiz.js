@@ -1,11 +1,11 @@
 /* VARIABLES */
 
 let bouton = document.querySelector(".bouton");
-
+let menu = document.querySelector(".menu");
 let compteur = document.querySelector("#compteur");
 let playerName = document.querySelector("#playerName");
 let namePlayer = "";
-
+let recommencer = document.querySelector(".recommencer");
 let inputName = document.createElement("input");
 let validName = document.createElement("a");
 
@@ -50,6 +50,15 @@ let reponses = [
     ],
 ]
 
+/* MENU */
+
+bouton.addEventListener("click", function() {
+    menu.classList.toggle("menu_open");
+});
+
+recommencer.addEventListener("click", function() {
+    window.location.reload();
+})
 
 /* LANCEMENT DU JEU */
 
@@ -65,6 +74,10 @@ function debutJeu() {
     reponse4.innerHTML = "";
     question.style.display = "none";
     containerQuestion.appendChild(inputName);
+    blocReponse1.style.opacity = "0";
+    blocReponse2.style.opacity = "0";
+    blocReponse3.style.opacity = "0";
+    blocReponse4.style.opacity = "0";
     inputName.setAttribute("placeholder", "Votre Nom");
     inputName.setAttribute("type", "text");
     inputName.style.height = "30%";
@@ -96,6 +109,10 @@ function premiereQuestion() {
     question.style.textAlign = "center";
     question.innerHTML = questions[0];
     compteur.innerHTML = "1 / 10";
+    blocReponse1.style.opacity = "1";
+    blocReponse2.style.opacity = "1";
+    blocReponse3.style.opacity = "1";
+    blocReponse4.style.opacity = "1";
     reponse1.innerHTML = reponses[0][0];
     reponse2.innerHTML = reponses[0][1];
     reponse3.innerHTML = reponses[0][2];
@@ -105,7 +122,7 @@ function premiereQuestion() {
         resultQuestion.innerHTML = "Loupé !";
         resultValid.style.backgroundColor = "var(--vert)";
         result.style.left = "calc(50vw - 100px)";
-        --score;
+        score--;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
@@ -116,7 +133,7 @@ function premiereQuestion() {
         resultQuestion.innerHTML = "Loupé !";
         resultValid.style.backgroundColor = "var(--vert)";
         result.style.left = "calc(50vw - 100px)";
-        --score;
+        score--;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
@@ -127,7 +144,7 @@ function premiereQuestion() {
         resultQuestion.innerHTML = "Bien vu !";
         resultValid.style.backgroundColor = "var(--bordeaux)";
         result.style.left = "calc(50vw - 100px)";
-        ++score;
+        score++;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
@@ -140,7 +157,7 @@ function premiereQuestion() {
         resultQuestion.innerHTML = "Loupé !";
         resultValid.style.backgroundColor = "var(--vert)";
         result.style.left = "calc(50vw - 100px)";
-        --score;
+        score--;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
