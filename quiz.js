@@ -8,8 +8,6 @@ let namePlayer = "";
 let recommencer = document.querySelector(".recommencer");
 let inputName = document.createElement("input");
 let validName = document.createElement("a");
-
-
 let containerQuestion = document.querySelector(".bloc-question");
 let question = document.querySelector("#question");
 let reponse1 = document.querySelector("#reponse1");
