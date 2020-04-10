@@ -60,5 +60,5 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 # Jouer
 
-Je préfère attendre qu'il soit entièrement terminé avant de le mettre en ligne.
+Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)
     
