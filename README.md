@@ -44,10 +44,16 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Préparation des 2 premières questions.
     * Ajout du footer et du menu.
 
+* **10 Avril 2020**
+    * Réglage du bug de score.
+    * Ajout des 8 dernières questions.
+
 # Problèmes rencontrés
 
 * **9 Avril 2020**
-    * Le score ne s'incrémente pas quand on répond correctement à la deuxième question, et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
+    * Le score ne s'incrémente pas quand on répond correctement à la deuxième question,
+    et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
+    **Problème reglé le 10 Avril en ajoutant une variable temporaire (scoreTemp).**
 
 # Jouer
 
