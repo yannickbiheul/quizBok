@@ -37,10 +37,19 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 # Journal
 
+* **8 Avril 2020**
+    * Lancement du projet, création de l'interface.
+
 * **9 Avril 2020**
     * Préparation des 2 premières questions.
     * Ajout du footer et du menu.
 
-* **8 Avril 2020**
-    * Lancement du projet, création de l'interface.
+# Problèmes rencontrés
+
+* **9 Avril 2020**
+    * Le score ne s'incrémente pas quand on répond correctement à la deuxième question, et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
+
+# Jouer
+
+Je préfère attendre qu'il soit entièrement terminé avant de le mettre en ligne.
     
