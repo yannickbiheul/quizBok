@@ -317,7 +317,7 @@ function troisiemeQuestion() {
             troisiemeQuestion();
         });
     });
-    blocReponse2.addEventListener("click", function(event) {
+    blocReponse2.addEventListener("click", function() {
         result.style.backgroundColor = "var(--bordeaux)";
         resultQuestion.innerHTML = "Loupé !";
         resultValid.style.backgroundColor = "var(--vert)";
@@ -726,7 +726,7 @@ function neuviemeQuestion() {
             neuviemeQuestion();
         });
     });
-    blocReponse2.addEventListener("click", function(event) {
+    blocReponse2.addEventListener("click", function() {
         result.style.backgroundColor = "var(--bordeaux)";
         resultQuestion.innerHTML = "Loupé !";
         resultValid.style.backgroundColor = "var(--vert)";
@@ -794,17 +794,18 @@ function dixiemeQuestion() {
             dixiemeQuestion();
         });
     });
-    blocReponse2.addEventListener("click", function(event) {
+    blocReponse2.addEventListener("click", function() {
         result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
+        result.style.height = "200px";
+        result.style.padding = "10px";
         resultValid.style.backgroundColor = "var(--bordeaux)";
         result.style.left = "calc(50vw - 100px)";
         scoreTemp10 += 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultQuestion.innerHTML = "Félicitations, vous avez terminé le quiz avec " + score + " Points !";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            endGame();
+            window.location.reload();
         });
     });
     blocReponse3.addEventListener("click", function() {
@@ -834,13 +835,4 @@ function dixiemeQuestion() {
             dixiemeQuestion();
         });
     });
-}
-
-
-function endGame() {
-    question.style.opacity = "0";
-    reponse1.style.opacity = "0";
-    reponse2.style.opacity = "0";
-    reponse3.style.opacity = "0";
-    reponse4.style.opacity = "0";
 }

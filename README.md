@@ -47,6 +47,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 * **10 Avril 2020**
     * Réglage du bug de score.
     * Ajout des 8 dernières questions.
+    * Réglages de quelques bugs.
 
 # Problèmes rencontrés
 
@@ -54,6 +55,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Le score ne s'incrémente pas quand on répond correctement à la deuxième question,
     et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
     **Problème reglé le 10 Avril en ajoutant une variable temporaire (scoreTemp).**
+    * Le jeu est long à charger sur la fin.
 
 # Jouer
 
