@@ -18,16 +18,10 @@ let reponse3 = document.querySelector("#reponse3");
 let blocReponse3 = document.querySelector(".bloc-reponse3");
 let reponse4 = document.querySelector("#reponse4");
 let blocReponse4 = document.querySelector(".bloc-reponse4");
-
 let result = document.querySelector(".result");
 let resultQuestion = document.querySelector("#resultQuestion");
 let resultValid = document.querySelector("#resultValid");
-
 let score = 0;
-
-
-
-
 let questions = [
     "Quel acteur joue le rôle principal dans le film \"Brazil\" de Terry Gilliam ?",
     "Je parcours 10 mètres en 1 seconde. Quelle est ma vitesse moyenne ?",
@@ -40,7 +34,6 @@ let questions = [
     "La Perse s’appelle aujourd’hui :",
     "Lequel de ces membres a été le plus présent dans le groupe \"AC-DC\" ?"
 ];
-
 let reponses = [
     [
         "Robert De Niro",
@@ -115,20 +108,52 @@ bouton.addEventListener("click", function() {
 
 debutJeu();
 
+/* Fonction qui affiche une fenêtre d'échec. */
+function echec() {
+    result.style.backgroundColor = "var(--bordeaux)";
+    resultQuestion.innerHTML = "Loupé !";
+    resultValid.style.backgroundColor = "var(--vert)";
+    result.style.left = "calc(50vw - 100px)";
+}
 
-function debutJeu() {
+/* Fonction qui affiche une fenêtre de succes. */ 
+function succes() {
+    result.style.backgroundColor = "var(--vert)";
+    resultQuestion.innerHTML = "Bien vu !";
+    resultValid.style.backgroundColor = "var(--bordeaux)";
+    result.style.left = "calc(50vw - 100px)";
+}
+
+/* Fonction qui permet d'initialiser l'interface. */
+function effacerTout() {
     playerName.innerHTML = "";
     compteur.innerHTML = "";
     reponse1.innerHTML = "";
     reponse2.innerHTML = "";
     reponse3.innerHTML = "";
     reponse4.innerHTML = "";
-    question.style.display = "none";
-    containerQuestion.appendChild(inputName);
     blocReponse1.style.opacity = "0";
     blocReponse2.style.opacity = "0";
     blocReponse3.style.opacity = "0";
     blocReponse4.style.opacity = "0";
+}
+
+/* Fonction qui prépare l'interface pour la première question. */ 
+function preparerPremiereQuestion() {
+    inputName.style.display = "none";
+    validName.style.display = "none";
+    question.style.display = "flex";
+    question.style.textAlign = "center";
+    blocReponse1.style.opacity = "1";
+    blocReponse2.style.opacity = "1";
+    blocReponse3.style.opacity = "1";
+    blocReponse4.style.opacity = "1";
+}
+
+/* Fonction qui prépare l'interface pour entrer son nom. */ 
+function preparerInterface() {
+    question.style.display = "none";
+    containerQuestion.appendChild(inputName);
     inputName.setAttribute("placeholder", "Votre Nom");
     inputName.setAttribute("type", "text");
     inputName.style.height = "30%";
@@ -146,6 +171,12 @@ function debutJeu() {
     validName.style.marginLeft = "20px";
     validName.style.borderRadius = "5px";
     validName.style.boxShadow = "4px 4px 4px #000";
+}
+
+/* Fonction de début de jeu */
+function debutJeu() {
+    effacerTout();
+    preparerInterface();
     validName.addEventListener("click", function() {
         namePlayer = inputName.value;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -153,27 +184,19 @@ function debutJeu() {
     });
 };
 
+/* Première question */
 function premiereQuestion() {
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
+    preparerPremiereQuestion();
     question.innerHTML = questions[0];
     compteur.innerHTML = "1 / 10";
-    blocReponse1.style.opacity = "1";
-    blocReponse2.style.opacity = "1";
-    blocReponse3.style.opacity = "1";
-    blocReponse4.style.opacity = "1";
     reponse1.innerHTML = reponses[0][0];
     reponse2.innerHTML = reponses[0][1];
     reponse3.innerHTML = reponses[0][2];
     reponse4.innerHTML = reponses[0][3];
-    let scoreTemp1 = score;
+    let scoreTemp1 = score; // Variable temporaire pour éviter un bug sur le comptage de score.
+    /* Reponse 1 */
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp1 -= 1;
         score = scoreTemp1;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -182,11 +205,9 @@ function premiereQuestion() {
             premiereQuestion();
         });
     });
+    /* Réponse 2 */
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp1 -= 1;
         score = scoreTemp1;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -195,11 +216,9 @@ function premiereQuestion() {
             premiereQuestion();
         });
     });
+    /* Réponse 3 */
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp1 += 1;
         score = scoreTemp1;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -209,11 +228,9 @@ function premiereQuestion() {
         });
 
     });
+    /* Réponse 4 */
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp1 -= 1;
         score = scoreTemp1;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -226,10 +243,6 @@ function premiereQuestion() {
 
 function deuxiemeQuestion() {
     let scoreTemp2 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[1];
     compteur.innerHTML = "2 / 10";
     reponse1.innerHTML = reponses[1][0];
@@ -237,10 +250,7 @@ function deuxiemeQuestion() {
     reponse3.innerHTML = reponses[1][2];
     reponse4.innerHTML = reponses[1][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp2 -= 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -250,10 +260,7 @@ function deuxiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp2 += 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -263,10 +270,7 @@ function deuxiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp2 -= 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -277,10 +281,7 @@ function deuxiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp2 -= 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -294,10 +295,6 @@ function deuxiemeQuestion() {
 
 function troisiemeQuestion() {
     let scoreTemp3 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[2];
     compteur.innerHTML = "3 / 10";
     reponse1.innerHTML = reponses[2][0];
@@ -305,10 +302,7 @@ function troisiemeQuestion() {
     reponse3.innerHTML = reponses[2][2];
     reponse4.innerHTML = reponses[2][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp3 -= 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -318,10 +312,7 @@ function troisiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp3 -= 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -331,10 +322,7 @@ function troisiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp3 -= 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -345,10 +333,7 @@ function troisiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp3 += 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -362,10 +347,6 @@ function troisiemeQuestion() {
 
 function quatriemeQuestion() {
     let scoreTemp4 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[3];
     compteur.innerHTML = "4 / 10";
     reponse1.innerHTML = reponses[3][0];
@@ -373,10 +354,7 @@ function quatriemeQuestion() {
     reponse3.innerHTML = reponses[3][2];
     reponse4.innerHTML = reponses[3][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -386,10 +364,7 @@ function quatriemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         console.log(score);
@@ -400,10 +375,7 @@ function quatriemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp4 += 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -414,10 +386,7 @@ function quatriemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -431,10 +400,6 @@ function quatriemeQuestion() {
 
 function cinquiemeQuestion() {
     let scoreTemp5 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[4];
     compteur.innerHTML = "5 / 10";
     reponse1.innerHTML = reponses[4][0];
@@ -442,10 +407,7 @@ function cinquiemeQuestion() {
     reponse3.innerHTML = reponses[4][2];
     reponse4.innerHTML = reponses[4][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp5 += 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -455,10 +417,7 @@ function cinquiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -468,10 +427,7 @@ function cinquiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -482,10 +438,7 @@ function cinquiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -499,10 +452,6 @@ function cinquiemeQuestion() {
 
 function sixiemeQuestion() {
     let scoreTemp6 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[5];
     compteur.innerHTML = "6 / 10";
     reponse1.innerHTML = reponses[5][0];
@@ -510,10 +459,7 @@ function sixiemeQuestion() {
     reponse3.innerHTML = reponses[5][2];
     reponse4.innerHTML = reponses[5][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -523,10 +469,7 @@ function sixiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -536,10 +479,7 @@ function sixiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp6 += 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -550,10 +490,7 @@ function sixiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -567,10 +504,6 @@ function sixiemeQuestion() {
 
 function septiemeQuestion() {
     let scoreTemp7 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[6];
     compteur.innerHTML = "7 / 10";
     reponse1.innerHTML = reponses[6][0];
@@ -578,10 +511,7 @@ function septiemeQuestion() {
     reponse3.innerHTML = reponses[6][2];
     reponse4.innerHTML = reponses[6][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp7 += 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -591,10 +521,7 @@ function septiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -604,10 +531,7 @@ function septiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -618,10 +542,7 @@ function septiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -635,10 +556,6 @@ function septiemeQuestion() {
 
 function huitiemeQuestion() {
     let scoreTemp8 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[7];
     compteur.innerHTML = "8 / 10";
     reponse1.innerHTML = reponses[7][0];
@@ -646,10 +563,7 @@ function huitiemeQuestion() {
     reponse3.innerHTML = reponses[7][2];
     reponse4.innerHTML = reponses[7][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -659,10 +573,7 @@ function huitiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -672,10 +583,7 @@ function huitiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp8 += 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -686,10 +594,7 @@ function huitiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -703,10 +608,6 @@ function huitiemeQuestion() {
 
 function neuviemeQuestion() {
     let scoreTemp9 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[8];
     compteur.innerHTML = "9 / 10";
     reponse1.innerHTML = reponses[8][0];
@@ -714,10 +615,7 @@ function neuviemeQuestion() {
     reponse3.innerHTML = reponses[8][2];
     reponse4.innerHTML = reponses[8][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp9 -= 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -727,10 +625,7 @@ function neuviemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp9 -= 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -740,10 +635,7 @@ function neuviemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp9 -= 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -754,10 +646,7 @@ function neuviemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
-        resultQuestion.innerHTML = "Bien vu !";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
+        succes();
         scoreTemp9 += 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -771,10 +660,6 @@ function neuviemeQuestion() {
 
 function dixiemeQuestion() {
     let scoreTemp10 = score;
-    inputName.style.display = "none";
-    validName.style.display = "none";
-    question.style.display = "flex";
-    question.style.textAlign = "center";
     question.innerHTML = questions[9];
     compteur.innerHTML = "10 / 10";
     reponse1.innerHTML = reponses[9][0];
@@ -782,10 +667,7 @@ function dixiemeQuestion() {
     reponse3.innerHTML = reponses[9][2];
     reponse4.innerHTML = reponses[9][3];
     blocReponse1.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp10 -= 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -795,11 +677,8 @@ function dixiemeQuestion() {
         });
     });
     blocReponse2.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--vert)";
+        succes();
         result.style.height = "200px";
-        result.style.padding = "10px";
-        resultValid.style.backgroundColor = "var(--bordeaux)";
-        result.style.left = "calc(50vw - 100px)";
         scoreTemp10 += 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -809,10 +688,7 @@ function dixiemeQuestion() {
         });
     });
     blocReponse3.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp10 -= 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -823,10 +699,7 @@ function dixiemeQuestion() {
 
     });
     blocReponse4.addEventListener("click", function() {
-        result.style.backgroundColor = "var(--bordeaux)";
-        resultQuestion.innerHTML = "Loupé !";
-        resultValid.style.backgroundColor = "var(--vert)";
-        result.style.left = "calc(50vw - 100px)";
+        echec();
         scoreTemp10 -= 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -836,3 +709,4 @@ function dixiemeQuestion() {
         });
     });
 }
+

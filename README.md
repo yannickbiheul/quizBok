@@ -48,6 +48,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Réglage du bug de score.
     * Ajout des 8 dernières questions.
     * Réglages de quelques bugs.
+    * Refactoring pour gagner quelques lignes.
 
 # Problèmes rencontrés
 
