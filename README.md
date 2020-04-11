@@ -64,6 +64,9 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     **Problème reglé le 11 Avril en ajoutant des removeEventListener.**
     Merci à Laurent H., Jérémy S. et Gaetan P. pour leurs conseils !
 
+* **11 Avril 2020**
+    * Rendu sur mobile pas terrible : éléments mal centrés, etc...
+
 # Jouer
 
 Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)
