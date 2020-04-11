@@ -15,6 +15,7 @@ header {
     height: calc(100vh - 65px);
     background-color: var(--bleu-clair);
     padding-top: 65px;
+    padding-bottom: 10px;
 }
 
 nav {
@@ -95,7 +96,7 @@ nav {
 }
 
 .container-question {
-    height: 22%;
+    height: 28%;
     width: 90%;
     margin: auto;
     /* border: 1px solid #fff; */
@@ -115,6 +116,7 @@ nav {
     border-radius: 5px;
     box-shadow: 4px 4px 4px #000;
     padding: 5px;
+    text-align: center;
 }
 
 .container-reponses1 {
@@ -154,6 +156,7 @@ nav {
     cursor: pointer;
     padding: 5px;
     transition-duration: 0.5s;
+    text-align: center;
 }
 
 .bloc-reponse1:active {
@@ -175,6 +178,7 @@ nav {
     cursor: pointer;
     padding: 5px;
     transition-duration: 0.5s;
+    text-align: center;
 }
 
 .bloc-reponse2:active {
@@ -196,6 +200,7 @@ nav {
     cursor: pointer;
     padding: 5px;
     transition-duration: 0.5s;
+    text-align: center;
 }
 
 .bloc-reponse3:active {
@@ -217,6 +222,7 @@ nav {
     cursor: pointer;
     padding: 5px;
     transition-duration: 0.5s;
+    text-align: center;
 }
 
 .bloc-reponse4:active {
@@ -315,7 +321,7 @@ nav {
 
 footer {
     width: 100%;
-    height: 40px;
+    height: 30px;
     background-color: var(--bordeaux);
     position: fixed;
     bottom: 0;

@@ -694,9 +694,9 @@ function dixiemeReponse2() {
     let scoreTemp10 = score;
     succes();
         result.style.height = "200px";
-        result.style.width = "300px";
+        result.style.width = "250px";
         result.style.top = "calc(50vh - 100px)";
-        result.style.left = "calc(50vw - 200px)";
+        result.style.left = "calc(50vw - 150px)";
         scoreTemp10 += 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
