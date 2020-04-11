@@ -52,6 +52,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 * **11 Avril 2020**
     * Réglage du bug de temps de chargement.
+    * Ajout d'instructions conditionnelles pour un résultat personnalisé en fonction du score.
 
 # Problèmes rencontrés
 
