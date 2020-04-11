@@ -232,7 +232,7 @@ nav {
     height: 120px;
     background-color: var(--vert);
     color: #fff;
-    border: 2px solid var(--bordeaux);
+    border: 2px solid var(--vert);
     position: absolute;
     left: -250px;
     top: calc(50vh);

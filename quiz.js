@@ -111,17 +111,25 @@ debutJeu();
 /* Fonction qui affiche une fenêtre d'échec. */
 function echec() {
     result.style.backgroundColor = "var(--bordeaux)";
+    result.style.border = "var(--bordeaux)";
+    result.style.paddingLeft = "30px";
+    result.style.paddingRight = "30px";
+    result.style.textAlign = "center";
     resultQuestion.innerHTML = "Loupé !";
     resultValid.style.backgroundColor = "var(--vert)";
-    result.style.left = "calc(50vw - 100px)";
+    result.style.left = "calc(50vw - 130px)";
 }
 
 /* Fonction qui affiche une fenêtre de succes. */ 
 function succes() {
     result.style.backgroundColor = "var(--vert)";
+    result.style.border = "var(--vert)";
+    result.style.paddingLeft = "30px";
+    result.style.paddingRight = "30px";
+    result.style.textAlign = "center";
     resultQuestion.innerHTML = "Bien vu !";
     resultValid.style.backgroundColor = "var(--bordeaux)";
-    result.style.left = "calc(50vw - 100px)";
+    result.style.left = "calc(50vw - 130px)";
 }
 
 /* Fonction qui permet d'initialiser l'interface. */
@@ -192,7 +200,7 @@ function premiereReponse1() {
     score = scoreTemp1;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         premiereQuestion();
     });
 };
@@ -204,7 +212,7 @@ function premiereReponse2() {
     score = scoreTemp1;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         premiereQuestion();
     });
 };
@@ -216,7 +224,7 @@ function premiereReponse3() {
     score = scoreTemp1;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         deuxiemeQuestion();
         blocReponse1.removeEventListener("click", premiereReponse1);
         blocReponse2.removeEventListener("click", premiereReponse2);
@@ -232,7 +240,7 @@ function premiereReponse4() {
     score = scoreTemp1;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         premiereQuestion();
     });
 };
@@ -245,7 +253,7 @@ function deuxiemeReponse1() {
     score = scoreTemp2;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         deuxiemeQuestion();
     });
 };
@@ -257,7 +265,7 @@ function deuxiemeReponse2() {
     score = scoreTemp2;
     playerName.innerHTML = namePlayer + " : " + score + " Points.";
     resultValid.addEventListener("click", function() {
-        result.style.left = "-250px";
+        result.style.left = "-350px";
         troisiemeQuestion();
         blocReponse1.removeEventListener("click", deuxiemeReponse1);
         blocReponse2.removeEventListener("click", deuxiemeReponse2);
@@ -273,7 +281,7 @@ function deuxiemeReponse3() {
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             deuxiemeQuestion();
         });
 };
@@ -285,7 +293,7 @@ function deuxiemeReponse4() {
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             deuxiemeQuestion();
         });
 };
@@ -298,7 +306,7 @@ function troisiemeReponse1() {
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             troisiemeQuestion();
         });
 };
@@ -310,7 +318,7 @@ function troisiemeReponse2() {
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             troisiemeQuestion();
         });
 };
@@ -322,7 +330,7 @@ function troisiemeReponse3() {
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             troisiemeQuestion();
         });
 };
@@ -334,7 +342,7 @@ function troisiemeReponse4() {
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             quatriemeQuestion();
             blocReponse1.removeEventListener("click", troisiemeReponse1);
             blocReponse2.removeEventListener("click", troisiemeReponse2);
@@ -352,7 +360,7 @@ function quatriemeReponse1() {
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             quatriemeQuestion();
         });
 };
@@ -365,7 +373,7 @@ function quatriemeReponse2() {
         console.log(score);
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             quatriemeQuestion();
         });
 }
@@ -377,7 +385,7 @@ function quatriemeReponse3() {
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             cinquiemeQuestion();
             blocReponse1.removeEventListener("click", quatriemeReponse1);
             blocReponse2.removeEventListener("click", quatriemeReponse2);
@@ -393,12 +401,12 @@ function quatriemeReponse4() {
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             quatriemeQuestion();
         });
 };
 
-/* Fonctions réponses pour question 5 */
+                                        /* Fonctions réponses pour question 5 */
 
 function cinquiemeReponse1() {
     let scoreTemp5 = score;
@@ -407,7 +415,7 @@ function cinquiemeReponse1() {
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             sixiemeQuestion();
             blocReponse1.removeEventListener("click", cinquiemeReponse1);
             blocReponse2.removeEventListener("click", cinquiemeReponse2);
@@ -423,7 +431,7 @@ function cinquiemeReponse2() {
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             cinquiemeQuestion();
         });
 };
@@ -435,7 +443,7 @@ function cinquiemeReponse3() {
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             cinquiemeQuestion();
         });
 };
@@ -447,12 +455,12 @@ function cinquiemeReponse4() {
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             cinquiemeQuestion();
         });
 };
 
-/* Fonctions réponses pour question 6 */
+                                        /* Fonctions réponses pour question 6 */
 
 function sixiemeReponse1() {
     let scoreTemp6 = score;
@@ -461,7 +469,7 @@ function sixiemeReponse1() {
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             sixiemeQuestion();
         });
 };
@@ -473,7 +481,7 @@ function sixiemeReponse2() {
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             sixiemeQuestion();
         });
 };
@@ -485,7 +493,7 @@ function sixiemeReponse3() {
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             septiemeQuestion();
             blocReponse1.removeEventListener("click", sixiemeReponse1);
             blocReponse2.removeEventListener("click", sixiemeReponse2);
@@ -501,12 +509,12 @@ function sixiemeReponse4() {
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             sixiemeQuestion();
         });
 };
 
-/* Fonctions réponses pour question 7 */
+                                        /* Fonctions réponses pour question 7 */
 
 function septiemeReponse1() {
     let scoreTemp7 = score;
@@ -515,7 +523,7 @@ function septiemeReponse1() {
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             huitiemeQuestion();
             blocReponse1.removeEventListener("click", septiemeReponse1);
             blocReponse2.removeEventListener("click", septiemeReponse2);
@@ -531,7 +539,7 @@ function septiemeReponse2() {
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             septiemeQuestion();
         });
 };
@@ -543,7 +551,7 @@ function septiemeReponse3() {
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             septiemeQuestion();
         });
 };
@@ -555,12 +563,12 @@ function septiemeReponse4() {
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             septiemeQuestion();
         });
 };
 
-/* Fonctions réponses pour question 8 */
+                                        /* Fonctions réponses pour question 8 */
 
 function huitiemeReponse1() {
     let scoreTemp8 = score;
@@ -569,7 +577,7 @@ function huitiemeReponse1() {
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             huitiemeQuestion();
         });
 };
@@ -581,7 +589,7 @@ function huitiemeReponse2() {
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             huitiemeQuestion();
         });
 };
@@ -593,7 +601,7 @@ function huitiemeReponse3() {
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             neuviemeQuestion();
             blocReponse1.removeEventListener("click", huitiemeReponse1);
             blocReponse2.removeEventListener("click", huitiemeReponse2);
@@ -609,12 +617,12 @@ function huitiemeReponse4() {
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             huitiemeQuestion();
         });
 };
 
-/* Fonctions réponses pour question 9 */
+                                        /* Fonctions réponses pour question 9 */
 
 function neuviemeReponse1() {
     let scoreTemp9 = score;
@@ -623,7 +631,7 @@ function neuviemeReponse1() {
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             neuviemeQuestion();
         });
 };
@@ -635,7 +643,7 @@ function neuviemeReponse2() {
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             neuviemeQuestion();
         });
 };
@@ -647,7 +655,7 @@ function neuviemeReponse3() {
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             neuviemeQuestion();
         });
 };
@@ -659,7 +667,7 @@ function neuviemeReponse4() {
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             dixiemeQuestion();
             blocReponse1.removeEventListener("click", neuviemeReponse1);
             blocReponse2.removeEventListener("click", neuviemeReponse2);
@@ -668,7 +676,7 @@ function neuviemeReponse4() {
         });
 };
 
-/* Fonctions réponses pour question 10 */
+                                        /* Fonctions réponses pour question 10 */
 
 function dixiemeReponse1() {
     let scoreTemp10 = score;
@@ -677,7 +685,7 @@ function dixiemeReponse1() {
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             dixiemeQuestion();
         });
 };
@@ -686,10 +694,23 @@ function dixiemeReponse2() {
     let scoreTemp10 = score;
     succes();
         result.style.height = "200px";
+        result.style.width = "300px";
+        result.style.top = "calc(50vh - 100px)";
+        result.style.left = "calc(50vw - 200px)";
         scoreTemp10 += 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultQuestion.innerHTML = "Félicitations, vous avez terminé le quiz avec " + score + " Points !";
+        if (score < 0) {
+            resultQuestion.innerHTML = score + " Points ?! Sérieux ?!<br>Va falloir faire des efforts !";
+        } else if (score === 0) {
+            resultQuestion.innerHTML = "BOOUUHH ! <br>" + score + " Points ! <br>La loose !";
+        } else if (score > 0 && score <5) {
+            resultQuestion.innerHTML = score + " Points,<br> c'est vraiment pas terrible !";
+        } else if (score >= 5 && score < 10) {
+            resultQuestion.innerHTML = "Peut mieux faire, vous avez terminé le quiz avec <br>" + score + " Points !";
+        } else {
+            resultQuestion.innerHTML = score + " Points !<br>Félicitations, vous êtes vraiment fort !";
+        }
         resultValid.addEventListener("click", function() {
             window.location.reload();
         });
@@ -702,7 +723,7 @@ function dixiemeReponse3() {
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             dixiemeQuestion();
         });
 };
@@ -714,7 +735,7 @@ function dixiemeReponse4() {
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
+            result.style.left = "-350px";
             dixiemeQuestion();
         });
 };
