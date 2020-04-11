@@ -184,73 +184,91 @@ function debutJeu() {
     });
 };
 
-/* Première question */
-function premiereQuestion() {
-    preparerPremiereQuestion();
-    question.innerHTML = questions[0];
-    compteur.innerHTML = "1 / 10";
-    reponse1.innerHTML = reponses[0][0];
-    reponse2.innerHTML = reponses[0][1];
-    reponse3.innerHTML = reponses[0][2];
-    reponse4.innerHTML = reponses[0][3];
-    let scoreTemp1 = score; // Variable temporaire pour éviter un bug sur le comptage de score.
-    /* Reponse 1 */
-    blocReponse1.addEventListener("click", function() {
-        echec();
-        scoreTemp1 -= 1;
-        score = scoreTemp1;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            premiereQuestion();
-        });
+                                        /* Fonctions réponses pour question 1 */
+function premiereReponse1() {
+    let scoreTemp1 = score;
+    echec();
+    scoreTemp1 -= 1;
+    score = scoreTemp1;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        premiereQuestion();
     });
-    /* Réponse 2 */
-    blocReponse2.addEventListener("click", function() {
-        echec();
-        scoreTemp1 -= 1;
-        score = scoreTemp1;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            premiereQuestion();
-        });
-    });
-    /* Réponse 3 */
-    blocReponse3.addEventListener("click", function() {
-        succes();
-        scoreTemp1 += 1;
-        score = scoreTemp1;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            deuxiemeQuestion();
-        });
+};
 
+function premiereReponse2() {
+    let scoreTemp1 = score;
+    echec();
+    scoreTemp1 -= 1;
+    score = scoreTemp1;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        premiereQuestion();
     });
-    /* Réponse 4 */
-    blocReponse4.addEventListener("click", function() {
-        echec();
-        scoreTemp1 -= 1;
-        score = scoreTemp1;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            premiereQuestion();
-        });
-    });
-}
+};
 
-function deuxiemeQuestion() {
+function premiereReponse3() {
+    let scoreTemp1 = score;
+    succes();
+    scoreTemp1 += 1;
+    score = scoreTemp1;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        deuxiemeQuestion();
+        blocReponse1.removeEventListener("click", premiereReponse1);
+        blocReponse2.removeEventListener("click", premiereReponse2);
+        blocReponse3.removeEventListener("click", premiereReponse3);
+        blocReponse4.removeEventListener("click", premiereReponse4);
+    });
+};
+
+function premiereReponse4() {
+    let scoreTemp1 = score;
+    echec();
+    scoreTemp1 -= 1;
+    score = scoreTemp1;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        premiereQuestion();
+    });
+};
+
+                                        /* Fonctions réponses pour question 2 */
+function deuxiemeReponse1() {
     let scoreTemp2 = score;
-    question.innerHTML = questions[1];
-    compteur.innerHTML = "2 / 10";
-    reponse1.innerHTML = reponses[1][0];
-    reponse2.innerHTML = reponses[1][1];
-    reponse3.innerHTML = reponses[1][2];
-    reponse4.innerHTML = reponses[1][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
+    scoreTemp2 -= 1;
+    score = scoreTemp2;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        deuxiemeQuestion();
+    });
+};
+
+function deuxiemeReponse2() {
+    let scoreTemp2 = score;
+    succes();
+    scoreTemp2 += 1;
+    score = scoreTemp2;
+    playerName.innerHTML = namePlayer + " : " + score + " Points.";
+    resultValid.addEventListener("click", function() {
+        result.style.left = "-250px";
+        troisiemeQuestion();
+        blocReponse1.removeEventListener("click", deuxiemeReponse1);
+        blocReponse2.removeEventListener("click", deuxiemeReponse2);
+        blocReponse3.removeEventListener("click", deuxiemeReponse3);
+        blocReponse4.removeEventListener("click", deuxiemeReponse4);
+    });
+};
+
+function deuxiemeReponse3() {
+    let scoreTemp2 = score;
+    echec();
         scoreTemp2 -= 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -258,19 +276,11 @@ function deuxiemeQuestion() {
             result.style.left = "-250px";
             deuxiemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        succes();
-        scoreTemp2 += 1;
-        score = scoreTemp2;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            troisiemeQuestion();
-        });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
+};
+
+function deuxiemeReponse4() {
+    let scoreTemp2 = score;
+    echec();
         scoreTemp2 -= 1;
         score = scoreTemp2;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -278,31 +288,12 @@ function deuxiemeQuestion() {
             result.style.left = "-250px";
             deuxiemeQuestion();
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
-        scoreTemp2 -= 1;
-        score = scoreTemp2;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            deuxiemeQuestion();
-        });
-    });
-}
-
-
-function troisiemeQuestion() {
+                                        /* Fonctions réponses pour question 3 */
+function troisiemeReponse1() {
     let scoreTemp3 = score;
-    question.innerHTML = questions[2];
-    compteur.innerHTML = "3 / 10";
-    reponse1.innerHTML = reponses[2][0];
-    reponse2.innerHTML = reponses[2][1];
-    reponse3.innerHTML = reponses[2][2];
-    reponse4.innerHTML = reponses[2][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp3 -= 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -310,51 +301,53 @@ function troisiemeQuestion() {
             result.style.left = "-250px";
             troisiemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
-        scoreTemp3 -= 1;
-        score = scoreTemp3;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            troisiemeQuestion();
-        });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
-        scoreTemp3 -= 1;
-        score = scoreTemp3;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            troisiemeQuestion();
-        });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        succes();
+function troisiemeReponse2() {
+    let scoreTemp3 = score;
+    echec();
+        scoreTemp3 -= 1;
+        score = scoreTemp3;
+        playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultValid.addEventListener("click", function() {
+            result.style.left = "-250px";
+            troisiemeQuestion();
+        });
+};
+
+function troisiemeReponse3() {
+    let scoreTemp3 = score;
+    echec();
+        scoreTemp3 -= 1;
+        score = scoreTemp3;
+        playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultValid.addEventListener("click", function() {
+            result.style.left = "-250px";
+            troisiemeQuestion();
+        });
+};
+
+function troisiemeReponse4() {
+    let scoreTemp3 = score;
+    succes();
         scoreTemp3 += 1;
         score = scoreTemp3;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             quatriemeQuestion();
+            blocReponse1.removeEventListener("click", troisiemeReponse1);
+            blocReponse2.removeEventListener("click", troisiemeReponse2);
+            blocReponse3.removeEventListener("click", troisiemeReponse3);
+            blocReponse4.removeEventListener("click", troisiemeReponse4);
         });
-    });
-}
+};
 
+                                        /* Fonctions réponses pour question 4 */
 
-function quatriemeQuestion() {
+function quatriemeReponse1() {
     let scoreTemp4 = score;
-    question.innerHTML = questions[3];
-    compteur.innerHTML = "4 / 10";
-    reponse1.innerHTML = reponses[3][0];
-    reponse2.innerHTML = reponses[3][1];
-    reponse3.innerHTML = reponses[3][2];
-    reponse4.innerHTML = reponses[3][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -362,9 +355,11 @@ function quatriemeQuestion() {
             result.style.left = "-250px";
             quatriemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
+};
+
+function quatriemeReponse2() {
+    let scoreTemp4 = score;
+    echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         console.log(score);
@@ -373,20 +368,27 @@ function quatriemeQuestion() {
             result.style.left = "-250px";
             quatriemeQuestion();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        succes();
+}
+
+function quatriemeReponse3() {
+    let scoreTemp4 = score;
+    succes();
         scoreTemp4 += 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             cinquiemeQuestion();
+            blocReponse1.removeEventListener("click", quatriemeReponse1);
+            blocReponse2.removeEventListener("click", quatriemeReponse2);
+            blocReponse3.removeEventListener("click", quatriemeReponse3);
+            blocReponse4.removeEventListener("click", quatriemeReponse4);
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function quatriemeReponse4() {
+    let scoreTemp4 = score;
+    echec();
         scoreTemp4 -= 1;
         score = scoreTemp4;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -394,30 +396,29 @@ function quatriemeQuestion() {
             result.style.left = "-250px";
             quatriemeQuestion();
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 5 */
 
-function cinquiemeQuestion() {
+function cinquiemeReponse1() {
     let scoreTemp5 = score;
-    question.innerHTML = questions[4];
-    compteur.innerHTML = "5 / 10";
-    reponse1.innerHTML = reponses[4][0];
-    reponse2.innerHTML = reponses[4][1];
-    reponse3.innerHTML = reponses[4][2];
-    reponse4.innerHTML = reponses[4][3];
-    blocReponse1.addEventListener("click", function() {
-        succes();
+    succes();
         scoreTemp5 += 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             sixiemeQuestion();
+            blocReponse1.removeEventListener("click", cinquiemeReponse1);
+            blocReponse2.removeEventListener("click", cinquiemeReponse2);
+            blocReponse3.removeEventListener("click", cinquiemeReponse3);
+            blocReponse4.removeEventListener("click", cinquiemeReponse4);
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
+};
+
+function cinquiemeReponse2() {
+    let scoreTemp5 = score;
+    echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -425,9 +426,11 @@ function cinquiemeQuestion() {
             result.style.left = "-250px";
             cinquiemeQuestion();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
+};
+
+function cinquiemeReponse3() {
+    let scoreTemp5 = score;
+    echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -435,10 +438,11 @@ function cinquiemeQuestion() {
             result.style.left = "-250px";
             cinquiemeQuestion();
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function cinquiemeReponse4() {
+    let scoreTemp5 = score;
+    echec();
         scoreTemp5 -= 1;
         score = scoreTemp5;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -446,20 +450,13 @@ function cinquiemeQuestion() {
             result.style.left = "-250px";
             cinquiemeQuestion();
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 6 */
 
-function sixiemeQuestion() {
+function sixiemeReponse1() {
     let scoreTemp6 = score;
-    question.innerHTML = questions[5];
-    compteur.innerHTML = "6 / 10";
-    reponse1.innerHTML = reponses[5][0];
-    reponse2.innerHTML = reponses[5][1];
-    reponse3.innerHTML = reponses[5][2];
-    reponse4.innerHTML = reponses[5][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -467,9 +464,11 @@ function sixiemeQuestion() {
             result.style.left = "-250px";
             sixiemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
+};
+
+function sixiemeReponse2() {
+    let scoreTemp6 = score;
+    echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -477,20 +476,27 @@ function sixiemeQuestion() {
             result.style.left = "-250px";
             sixiemeQuestion();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        succes();
+};
+
+function sixiemeReponse3() {
+    let scoreTemp6 = score;
+    succes();
         scoreTemp6 += 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             septiemeQuestion();
+            blocReponse1.removeEventListener("click", sixiemeReponse1);
+            blocReponse2.removeEventListener("click", sixiemeReponse2);
+            blocReponse3.removeEventListener("click", sixiemeReponse3);
+            blocReponse4.removeEventListener("click", sixiemeReponse4);
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function sixiemeReponse4() {
+    let scoreTemp6 = score;
+    echec();
         scoreTemp6 -= 1;
         score = scoreTemp6;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -498,30 +504,29 @@ function sixiemeQuestion() {
             result.style.left = "-250px";
             sixiemeQuestion();
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 7 */
 
-function septiemeQuestion() {
+function septiemeReponse1() {
     let scoreTemp7 = score;
-    question.innerHTML = questions[6];
-    compteur.innerHTML = "7 / 10";
-    reponse1.innerHTML = reponses[6][0];
-    reponse2.innerHTML = reponses[6][1];
-    reponse3.innerHTML = reponses[6][2];
-    reponse4.innerHTML = reponses[6][3];
-    blocReponse1.addEventListener("click", function() {
-        succes();
+    succes();
         scoreTemp7 += 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             huitiemeQuestion();
+            blocReponse1.removeEventListener("click", septiemeReponse1);
+            blocReponse2.removeEventListener("click", septiemeReponse2);
+            blocReponse3.removeEventListener("click", septiemeReponse3);
+            blocReponse4.removeEventListener("click", septiemeReponse4);
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
+};
+
+function septiemeReponse2() {
+    let scoreTemp7 = score;
+    echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -529,9 +534,11 @@ function septiemeQuestion() {
             result.style.left = "-250px";
             septiemeQuestion();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
+};
+
+function septiemeReponse3() {
+    let scoreTemp7 = score;
+    echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -539,10 +546,11 @@ function septiemeQuestion() {
             result.style.left = "-250px";
             septiemeQuestion();
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function septiemeReponse4() {
+    let scoreTemp7 = score;
+    echec();
         scoreTemp7 -= 1;
         score = scoreTemp7;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -550,20 +558,13 @@ function septiemeQuestion() {
             result.style.left = "-250px";
             septiemeQuestion();
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 8 */
 
-function huitiemeQuestion() {
+function huitiemeReponse1() {
     let scoreTemp8 = score;
-    question.innerHTML = questions[7];
-    compteur.innerHTML = "8 / 10";
-    reponse1.innerHTML = reponses[7][0];
-    reponse2.innerHTML = reponses[7][1];
-    reponse3.innerHTML = reponses[7][2];
-    reponse4.innerHTML = reponses[7][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -571,9 +572,11 @@ function huitiemeQuestion() {
             result.style.left = "-250px";
             huitiemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
+};
+
+function huitiemeReponse2() {
+    let scoreTemp8 = score;
+    echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -581,20 +584,27 @@ function huitiemeQuestion() {
             result.style.left = "-250px";
             huitiemeQuestion();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        succes();
+};
+
+function huitiemeReponse3() {
+    let scoreTemp8 = score;
+    succes();
         scoreTemp8 += 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             neuviemeQuestion();
+            blocReponse1.removeEventListener("click", huitiemeReponse1);
+            blocReponse2.removeEventListener("click", huitiemeReponse2);
+            blocReponse3.removeEventListener("click", huitiemeReponse3);
+            blocReponse4.removeEventListener("click", huitiemeReponse4);
         });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function huitiemeReponse4() {
+    let scoreTemp8 = score;
+    echec();
         scoreTemp8 -= 1;
         score = scoreTemp8;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -602,20 +612,13 @@ function huitiemeQuestion() {
             result.style.left = "-250px";
             huitiemeQuestion();
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 9 */
 
-function neuviemeQuestion() {
+function neuviemeReponse1() {
     let scoreTemp9 = score;
-    question.innerHTML = questions[8];
-    compteur.innerHTML = "9 / 10";
-    reponse1.innerHTML = reponses[8][0];
-    reponse2.innerHTML = reponses[8][1];
-    reponse3.innerHTML = reponses[8][2];
-    reponse4.innerHTML = reponses[8][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp9 -= 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -623,51 +626,53 @@ function neuviemeQuestion() {
             result.style.left = "-250px";
             neuviemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        echec();
-        scoreTemp9 -= 1;
-        score = scoreTemp9;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            neuviemeQuestion();
-        });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
-        scoreTemp9 -= 1;
-        score = scoreTemp9;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            neuviemeQuestion();
-        });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        succes();
+function neuviemeReponse2() {
+    let scoreTemp9 = score;
+    echec();
+        scoreTemp9 -= 1;
+        score = scoreTemp9;
+        playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultValid.addEventListener("click", function() {
+            result.style.left = "-250px";
+            neuviemeQuestion();
+        });
+};
+
+function neuviemeReponse3() {
+    let scoreTemp9 = score;
+    echec();
+        scoreTemp9 -= 1;
+        score = scoreTemp9;
+        playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultValid.addEventListener("click", function() {
+            result.style.left = "-250px";
+            neuviemeQuestion();
+        });
+};
+
+function neuviemeReponse4() {
+    let scoreTemp9 = score;
+    succes();
         scoreTemp9 += 1;
         score = scoreTemp9;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
         resultValid.addEventListener("click", function() {
             result.style.left = "-250px";
             dixiemeQuestion();
+            blocReponse1.removeEventListener("click", neuviemeReponse1);
+            blocReponse2.removeEventListener("click", neuviemeReponse2);
+            blocReponse3.removeEventListener("click", neuviemeReponse3);
+            blocReponse4.removeEventListener("click", neuviemeReponse4);
         });
-    });
-}
+};
 
+/* Fonctions réponses pour question 10 */
 
-function dixiemeQuestion() {
+function dixiemeReponse1() {
     let scoreTemp10 = score;
-    question.innerHTML = questions[9];
-    compteur.innerHTML = "10 / 10";
-    reponse1.innerHTML = reponses[9][0];
-    reponse2.innerHTML = reponses[9][1];
-    reponse3.innerHTML = reponses[9][2];
-    reponse4.innerHTML = reponses[9][3];
-    blocReponse1.addEventListener("click", function() {
-        echec();
+    echec();
         scoreTemp10 -= 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -675,9 +680,11 @@ function dixiemeQuestion() {
             result.style.left = "-250px";
             dixiemeQuestion();
         });
-    });
-    blocReponse2.addEventListener("click", function() {
-        succes();
+};
+
+function dixiemeReponse2() {
+    let scoreTemp10 = score;
+    succes();
         result.style.height = "200px";
         scoreTemp10 += 1;
         score = scoreTemp10;
@@ -686,20 +693,11 @@ function dixiemeQuestion() {
         resultValid.addEventListener("click", function() {
             window.location.reload();
         });
-    });
-    blocReponse3.addEventListener("click", function() {
-        echec();
-        scoreTemp10 -= 1;
-        score = scoreTemp10;
-        playerName.innerHTML = namePlayer + " : " + score + " Points.";
-        resultValid.addEventListener("click", function() {
-            result.style.left = "-250px";
-            dixiemeQuestion();
-        });
+};
 
-    });
-    blocReponse4.addEventListener("click", function() {
-        echec();
+function dixiemeReponse3() {
+    let scoreTemp10 = score;
+    echec();
         scoreTemp10 -= 1;
         score = scoreTemp10;
         playerName.innerHTML = namePlayer + " : " + score + " Points.";
@@ -707,6 +705,164 @@ function dixiemeQuestion() {
             result.style.left = "-250px";
             dixiemeQuestion();
         });
-    });
-}
+};
+
+function dixiemeReponse4() {
+    let scoreTemp10 = score;
+    echec();
+        scoreTemp10 -= 1;
+        score = scoreTemp10;
+        playerName.innerHTML = namePlayer + " : " + score + " Points.";
+        resultValid.addEventListener("click", function() {
+            result.style.left = "-250px";
+            dixiemeQuestion();
+        });
+};
+
+
+                                        /* Première Question */
+function premiereQuestion() {
+    preparerPremiereQuestion();
+    question.innerHTML = questions[0];
+    compteur.innerHTML = "1 / 10";
+    reponse1.innerHTML = reponses[0][0];
+    reponse2.innerHTML = reponses[0][1];
+    reponse3.innerHTML = reponses[0][2];
+    reponse4.innerHTML = reponses[0][3]; 
+    /* Reponse 1 */
+    blocReponse1.addEventListener("click", premiereReponse1);
+    /* Réponse 2 */
+    blocReponse2.addEventListener("click", premiereReponse2);
+    /* Réponse 3 */
+    blocReponse3.addEventListener("click", premiereReponse3);
+    /* Réponse 4 */
+    blocReponse4.addEventListener("click", premiereReponse4);
+};
+
+                                        /* Deuxième Question */
+function deuxiemeQuestion() {
+    question.innerHTML = questions[1];
+    compteur.innerHTML = "2 / 10";
+    reponse1.innerHTML = reponses[1][0];
+    reponse2.innerHTML = reponses[1][1];
+    reponse3.innerHTML = reponses[1][2];
+    reponse4.innerHTML = reponses[1][3];
+    blocReponse1.addEventListener("click", deuxiemeReponse1);
+    blocReponse2.addEventListener("click", deuxiemeReponse2);
+    blocReponse3.addEventListener("click", deuxiemeReponse3);
+    blocReponse4.addEventListener("click", deuxiemeReponse4);
+};
+
+                                        /* Troisième Question */
+function troisiemeQuestion() {
+    question.innerHTML = questions[2];
+    compteur.innerHTML = "3 / 10";
+    reponse1.innerHTML = reponses[2][0];
+    reponse2.innerHTML = reponses[2][1];
+    reponse3.innerHTML = reponses[2][2];
+    reponse4.innerHTML = reponses[2][3];
+    blocReponse1.addEventListener("click", troisiemeReponse1);
+    blocReponse2.addEventListener("click", troisiemeReponse2);
+    blocReponse3.addEventListener("click", troisiemeReponse3);
+    blocReponse4.addEventListener("click", troisiemeReponse4);
+};
+
+                                        /* Quatrième Question */
+function quatriemeQuestion() {
+    question.innerHTML = questions[3];
+    compteur.innerHTML = "4 / 10";
+    reponse1.innerHTML = reponses[3][0];
+    reponse2.innerHTML = reponses[3][1];
+    reponse3.innerHTML = reponses[3][2];
+    reponse4.innerHTML = reponses[3][3];
+    blocReponse1.addEventListener("click", quatriemeReponse1);
+    blocReponse2.addEventListener("click", quatriemeReponse2);
+    blocReponse3.addEventListener("click", quatriemeReponse3);
+    blocReponse4.addEventListener("click", quatriemeReponse4);
+};
+
+                                        /* Cinquième Question */
+function cinquiemeQuestion() {
+    question.innerHTML = questions[4];
+    compteur.innerHTML = "5 / 10";
+    reponse1.innerHTML = reponses[4][0];
+    reponse2.innerHTML = reponses[4][1];
+    reponse3.innerHTML = reponses[4][2];
+    reponse4.innerHTML = reponses[4][3];
+    blocReponse1.addEventListener("click", cinquiemeReponse1);
+    blocReponse2.addEventListener("click", cinquiemeReponse2);
+    blocReponse3.addEventListener("click", cinquiemeReponse3);
+    blocReponse4.addEventListener("click", cinquiemeReponse4);
+};
+
+                                        /* Sixième Question */
+function sixiemeQuestion() {
+    question.innerHTML = questions[5];
+    compteur.innerHTML = "6 / 10";
+    reponse1.innerHTML = reponses[5][0];
+    reponse2.innerHTML = reponses[5][1];
+    reponse3.innerHTML = reponses[5][2];
+    reponse4.innerHTML = reponses[5][3];
+    blocReponse1.addEventListener("click", sixiemeReponse1);
+    blocReponse2.addEventListener("click", sixiemeReponse2);
+    blocReponse3.addEventListener("click", sixiemeReponse3);
+    blocReponse4.addEventListener("click", sixiemeReponse4);
+};
+
+                                        /* Septième Question */
+function septiemeQuestion() {
+    question.innerHTML = questions[6];
+    compteur.innerHTML = "7 / 10";
+    reponse1.innerHTML = reponses[6][0];
+    reponse2.innerHTML = reponses[6][1];
+    reponse3.innerHTML = reponses[6][2];
+    reponse4.innerHTML = reponses[6][3];
+    blocReponse1.addEventListener("click", septiemeReponse1);
+    blocReponse2.addEventListener("click", septiemeReponse2);
+    blocReponse3.addEventListener("click", septiemeReponse3);
+    blocReponse4.addEventListener("click", septiemeReponse4);
+};
+
+                                        /* Huitième Question */
+function huitiemeQuestion() {
+    question.innerHTML = questions[7];
+    compteur.innerHTML = "8 / 10";
+    reponse1.innerHTML = reponses[7][0];
+    reponse2.innerHTML = reponses[7][1];
+    reponse3.innerHTML = reponses[7][2];
+    reponse4.innerHTML = reponses[7][3];
+    blocReponse1.addEventListener("click", huitiemeReponse1);
+    blocReponse2.addEventListener("click", huitiemeReponse2);
+    blocReponse3.addEventListener("click", huitiemeReponse3);
+    blocReponse4.addEventListener("click", huitiemeReponse4);
+};
+
+                                        /* Neuvième Question */
+function neuviemeQuestion() {
+    let scoreTemp9 = score;
+    question.innerHTML = questions[8];
+    compteur.innerHTML = "9 / 10";
+    reponse1.innerHTML = reponses[8][0];
+    reponse2.innerHTML = reponses[8][1];
+    reponse3.innerHTML = reponses[8][2];
+    reponse4.innerHTML = reponses[8][3];
+    blocReponse1.addEventListener("click", neuviemeReponse1);
+    blocReponse2.addEventListener("click", neuviemeReponse2);
+    blocReponse3.addEventListener("click", neuviemeReponse3);
+    blocReponse4.addEventListener("click", neuviemeReponse4);
+};
+
+                                        /* Dixième Question */
+function dixiemeQuestion() {
+    question.innerHTML = questions[9];
+    compteur.innerHTML = "10 / 10";
+    reponse1.innerHTML = reponses[9][0];
+    reponse2.innerHTML = reponses[9][1];
+    reponse3.innerHTML = reponses[9][2];
+    reponse4.innerHTML = reponses[9][3];
+    blocReponse1.addEventListener("click", dixiemeReponse1);
+    blocReponse2.addEventListener("click", dixiemeReponse2);
+    blocReponse3.addEventListener("click", dixiemeReponse3);
+    blocReponse4.addEventListener("click", dixiemeReponse4);
+};
 

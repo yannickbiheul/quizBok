@@ -50,6 +50,9 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Réglages de quelques bugs.
     * Refactoring pour gagner quelques lignes.
 
+* **11 Avril 2020**
+    * Réglage du bug de temps de chargement.
+
 # Problèmes rencontrés
 
 * **9 Avril 2020**
@@ -57,6 +60,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
     **Problème reglé le 10 Avril en ajoutant une variable temporaire (scoreTemp).**
     * Le jeu est long à charger sur la fin.
+    **Problème reglé le 11 Avril en ajoutant des removeEventListener.**
 
 # Jouer
 
