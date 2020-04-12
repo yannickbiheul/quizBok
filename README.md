@@ -54,18 +54,26 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Réglage du bug de temps de chargement.
     * Ajout d'instructions conditionnelles pour un résultat personnalisé en fonction du score.
 
+* **12 Avril 2020**
+    * Refonte du design pour adaptation sur mobiles.
+
 # Problèmes rencontrés
 
 * **9 Avril 2020**
     * Le score ne s'incrémente pas quand on répond correctement à la deuxième question,
     et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
+
     **Problème reglé le 10 Avril en ajoutant une variable temporaire (scoreTemp).**
     * Le jeu est long à charger sur la fin.
+
     **Problème reglé le 11 Avril en ajoutant des removeEventListener.**
+
     Merci à Laurent H., Jérémy S. et Gaetan P. pour leurs conseils !
 
 * **11 Avril 2020**
     * Rendu sur mobile pas terrible : éléments mal centrés, etc...
+
+    **Problème reglé le 12 Avril en faisant une refonte sur l'HTML et le CSS.**
 
 # Jouer
 
