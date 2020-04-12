@@ -16,6 +16,8 @@ header {
     background-color: var(--bleu-clair);
     padding-top: 65px;
     padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
 }
 
 nav {
@@ -273,7 +275,7 @@ nav {
 
 .menu {
     width: 200px;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 90px);
     position: fixed;
     top: 60px;
     background-color: #fff;
@@ -284,6 +286,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .menu1 {
@@ -297,11 +300,17 @@ nav {
 .menu a {
     text-decoration: none;
     color: #000;
+    font-weight: bold;
+}
+
+.menu img {
+    width: 100px;
+    margin-top: -20px;
 }
 
 .menu_open {
     width: 200px;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 90px);
     position: fixed;
     top: 60px;
     background-color: #fff;

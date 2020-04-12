@@ -34,6 +34,7 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 * [Flat ui colors](https://flatuicolors.com/) pour les couleurs
 * [FileZilla](https://filezilla-project.org/) pour communiquer avec le serveur
 * [Ionos](https://www.ionos.fr/) pour l'achat du nom de domaine
+* [FreePng.fr](https://www.freepng.fr/) pour les PNG.
 
 # Journal
 
@@ -56,6 +57,8 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 * **12 Avril 2020**
     * Refonte du design pour adaptation sur mobiles.
+    * Ajout d'un dossier images.
+    * Petites modifs CSS.
 
 # Problèmes rencontrés
 

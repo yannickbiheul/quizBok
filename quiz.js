@@ -707,7 +707,7 @@ function dixiemeReponse2() {
         } else if (score > 0 && score <5) {
             resultQuestion.innerHTML = score + " Points,<br> c'est vraiment pas terrible !";
         } else if (score >= 5 && score < 10) {
-            resultQuestion.innerHTML = "Peut mieux faire, vous avez terminé le quiz avec <br>" + score + " Points !";
+            resultQuestion.innerHTML = "Peut mieux faire, <br>mais " + score + " Points, c'est déjà pas mal !";
         } else {
             resultQuestion.innerHTML = score + " Points !<br>Félicitations, vous êtes vraiment fort !";
         }
