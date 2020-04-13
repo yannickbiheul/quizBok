@@ -60,6 +60,9 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
     * Ajout d'un dossier images.
     * Petites modifs CSS.
 
+* **13 Avril 2020**
+    * Modif du Footer.
+
 # Problèmes rencontrés
 
 * **9 Avril 2020**
