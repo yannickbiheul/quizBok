@@ -81,6 +81,9 @@ Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
     **Problème reglé le 12 Avril en faisant une refonte sur l'HTML et le CSS.**
 
+* **24 Mai 2020**
+    * Rangements fichiers css et js.
+
 # Jouer
 
 Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)
