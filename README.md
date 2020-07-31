@@ -1,4 +1,7 @@
 # QuizBok
+
+# Présentation du projet
+
 Un p'tit quiz avec 10 questions.
 
 Incrémentation du score quand la réponse est correcte,
@@ -8,20 +11,16 @@ Décrémentation quand elle est incorrecte.
 Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 # Langages
-* HTML
-* CSS
-* JavaScript
 
-# Compétences
-* CSS
-    * Variables
-    * FlexBox
+* HTML pour la structure des pages web
+* CSS pour la mise en forme
+* JavaScript pour les interactions
 
-* JavaScript
-    * Variables
-    * Arrays
-    * Instructions conditionnelles
-    * Intéractions avec le DOM
+# Déroulement du jeu
+
+Une page qui permet de se connecter.
+
+Une page par question. Chaque question aura quatre réponses différentes, dont une correcte.
 
 # Outils
 
