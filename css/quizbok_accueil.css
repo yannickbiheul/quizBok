@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 }
 
 .titre {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     width: 75%;
     height: 150px;
     display: flex;
@@ -44,11 +45,13 @@ body {
 
 .titre>h1 {
     color: #fff;
-    font-size: 4em;
+    font-size: 5em;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 3px;
 }
 
 .connexion {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     width: 75%;
     height: 100px;
     display: flex;
@@ -57,7 +60,7 @@ body {
 }
 
 .choix {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     width: 75%;
     height: 300px;
     display: flex;
