@@ -1,0 +1,82 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardPlayer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.namePlayer {
+    color: #fff;
+}
+.scorePlayer {
+    color: #fff;
+}
+
+.titre {
+    border: 1px solid #fff;
+    width: 75%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre>h1 {
+    color: #fff;
+    font-size: 4em;
+}
+
+.connexion {
+    border: 1px solid #fff;
+    width: 75%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choix {
+    border: 1px solid #fff;
+    width: 75%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputName {
+    height: 25px;
+    margin: 0 10px 0 10px;
+}
+.submitName {
+    height: 25px;
+    margin: 0 10px 0 10px;
+}
+
+.cardQuiz {
+    border: 1px solid #fff;
+    width: 20%;
+    height: 75%;
+    margin: 0 10px 0 10px;
+}
