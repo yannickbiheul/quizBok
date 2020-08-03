@@ -37,51 +37,8 @@ Une page par question. Chaque question aura quatre réponses différentes, dont 
 
 # Journal
 
-* **8 Avril 2020**
-    * Lancement du projet, création de l'interface.
-
-* **9 Avril 2020**
-    * Préparation des 2 premières questions.
-    * Ajout du footer et du menu.
-
-* **10 Avril 2020**
-    * Réglage du bug de score.
-    * Ajout des 8 dernières questions.
-    * Réglages de quelques bugs.
-    * Refactoring pour gagner quelques lignes.
-
-* **11 Avril 2020**
-    * Réglage du bug de temps de chargement.
-    * Ajout d'instructions conditionnelles pour un résultat personnalisé en fonction du score.
-
-* **12 Avril 2020**
-    * Refonte du design pour adaptation sur mobiles.
-    * Ajout d'un dossier images.
-    * Petites modifs CSS.
-
-* **13 Avril 2020**
-    * Modif du Footer.
-
-# Problèmes rencontrés
-
-* **9 Avril 2020**
-    * Le score ne s'incrémente pas quand on répond correctement à la deuxième question,
-    et donne des résultats bizarres quand on clique plusieurs fois sur les réponses (se multiplie par 2, etc...).
-
-    **Problème reglé le 10 Avril en ajoutant une variable temporaire (scoreTemp).**
-    * Le jeu est long à charger sur la fin.
-
-    **Problème reglé le 11 Avril en ajoutant des removeEventListener.**
-
-    Merci à Laurent H., Jérémy S. et Gaetan P. pour leurs conseils !
-
-* **11 Avril 2020**
-    * Rendu sur mobile pas terrible : éléments mal centrés, etc...
-
-    **Problème reglé le 12 Avril en faisant une refonte sur l'HTML et le CSS.**
-
-* **24 Mai 2020**
-    * Rangements fichiers css et js.
+* **03 Aout 2020**
+    * Création de la page d'accueil.
 
 # Jouer
 
