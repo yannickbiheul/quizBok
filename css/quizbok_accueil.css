@@ -6,11 +6,12 @@ html, body {
 
 body {
     height: 100vh;
-    background-color: #000;
+    /* background-color: #000; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: radial-gradient(#192a56, #000);
 }
 
 .cardPlayer {

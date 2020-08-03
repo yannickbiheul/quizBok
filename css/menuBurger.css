@@ -80,7 +80,7 @@ main>h1 {
     left: -100vw;
     width: 100vw;
     height: 100vh;
-    background-color: #192a56;
+    background: radial-gradient(#192a56, #000);
     transition-duration: 0.5s;
     z-index: 20;
     display: flex;
