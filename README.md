@@ -40,6 +40,9 @@ Une page par question. Chaque question aura quatre réponses différentes, dont 
 * **03 Aout 2020**
     * Création de la page d'accueil.
 
+* **04 Aout 2020**
+    * Refonte interface + Connexion du joueur.
+
 # Jouer
 
 Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)

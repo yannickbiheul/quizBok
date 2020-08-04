@@ -22,10 +22,10 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 100px;
     border: 1px solid #fff;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -36,6 +36,13 @@ body {
 }
 .scorePlayer {
     color: #fff;
+}
+
+.errorText {
+    color: red;
+    position: absolute;
+    top: 20px;
+    font-size: 1.5em;
 }
 
 /* TITRE */
@@ -93,7 +100,7 @@ body {
     /* border: 1px solid #fff; */
     width: 75%;
     height: 300px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -106,10 +113,61 @@ body {
     margin: 0 10px 0 10px;
     border-radius: 5px;
     box-shadow: 4px 4px 4px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CINEMA */
+.cinema {
+    background-color: #d35400;
+}
+.cinema>a {
+    text-align: center;
+}
+.cinema>a>img {
+    width: 50%;
+}
+
+/* MUSIQUE */
+.musique {
+    background-color: #e67e22;
+}
+.musique>a {
+    text-align: center;
+}
+.musique>a>img {
+    width: 50%;
+}
+
+/* HISTOIRE */
+.histoire {
+    background-color: #2ecc71;
+}
+.histoire>a {
+    text-align: center;
+}
+.histoire>a>img {
+    width: 50%;
+}
+
+/* JEUX VIDEO */
+.jeuxVideo {
+    background-color: #27ae60;
+}
+.jeuxVideo>a {
+    text-align: center;
+}
+.jeuxVideo>a>img {
+    width: 50%;
 }
 
 /* RESPONSIVE */
 @media screen and (max-width: 600px) {
+    .titre {
+        margin-top: 80px;
+    }
     .cardQuiz {
         width: 75%;
         margin: 20px 0 20px 0;
