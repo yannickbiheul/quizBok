@@ -1,19 +1,23 @@
+/* GENERAL */
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    --green: #27ae60;
+    --blue: #192a56;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     /* background-color: #000; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(#192a56, #000);
+    background: radial-gradient(var(--blue), #000);
 }
 
+/* CARTE DU JOUEUR */
 .cardPlayer {
     position: absolute;
     top: 10px;
@@ -34,6 +38,7 @@ body {
     color: #fff;
 }
 
+/* TITRE */
 .titre {
     /* border: 1px solid #fff; */
     width: 75%;
@@ -51,6 +56,7 @@ body {
     letter-spacing: 3px;
 }
 
+/* CONNEXION */
 .connexion {
     /* border: 1px solid #fff; */
     width: 75%;
@@ -60,22 +66,37 @@ body {
     align-items: center;
 }
 
+.inputName {
+    height: 30px;
+    margin: 0 10px 0 10px;
+    border-radius: 5px;
+    border: none;
+}
+.submitName {
+    height: 30px;
+    margin: 0 10px 0 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: var(--green);
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+/* CHOIX DES QUIZS */
 .choix {
     /* border: 1px solid #fff; */
     width: 75%;
     height: 300px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.inputName {
-    height: 25px;
-    margin: 0 10px 0 10px;
-}
-.submitName {
-    height: 25px;
-    margin: 0 10px 0 10px;
 }
 
 .cardQuiz {
@@ -83,4 +104,14 @@ body {
     width: 20%;
     height: 75%;
     margin: 0 10px 0 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #000;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+    .cardQuiz {
+        width: 75%;
+        margin: 20px 0 20px 0;
+    }
 }
