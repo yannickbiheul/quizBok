@@ -16,7 +16,7 @@ submitName.addEventListener('click', function() {
         cardPlayer.style.display = "flex";
         localStorage.setItem("playerName", inputName.value);
         playerName = localStorage.getItem("playerName");
-        namePlayer.innerHTML = playerName;
+        namePlayer.innerHTML += playerName;
         connexion.style.display = "none";
         errorText.innerHTML = "";
         choix.style.display = "flex";

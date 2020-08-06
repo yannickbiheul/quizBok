@@ -43,6 +43,13 @@ Une page par question. Chaque question aura quatre réponses différentes, dont 
 * **04 Aout 2020**
     * Refonte interface + Connexion du joueur.
 
+* **05Aout 2020**
+    * Déplacement du menu Burger dans le CSS.
+
+* **06 Aout 2020**
+    * Ajout de la fonctionnalité web storage.
+    * Refonte de la carte joueur.
+
 # Jouer
 
 Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)
