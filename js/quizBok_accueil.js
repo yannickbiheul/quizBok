@@ -1,3 +1,4 @@
+/* VARIABLES */
 let inputName = document.querySelector('.inputName');
 let submitName = document.querySelector('.submitName');
 let namePlayer = document.querySelector('.namePlayer');
@@ -7,12 +8,15 @@ let connexion = document.querySelector('.connexion');
 let errorText = document.querySelector('.errorText');
 let choix = document.querySelector('.choix');
 let playerScore = "";
+let playerName = "";
 
+/* ENREGISTREMENT DU JOEUR */
 submitName.addEventListener('click', function() {
     if (inputName.value) {
         cardPlayer.style.display = "flex";
-        namePlayer.innerHTML = inputName.value;
-        namePlayer = inputName.value;
+        localStorage.setItem("playerName", inputName.value);
+        playerName = localStorage.getItem("playerName");
+        namePlayer.innerHTML = playerName;
         connexion.style.display = "none";
         errorText.innerHTML = "";
         choix.style.display = "flex";
