@@ -9,8 +9,11 @@ let errorText = document.querySelector('.errorText');
 let choix = document.querySelector('.choix');
 let playerScore = "";
 let playerName = "";
+let boutonOptions = document.querySelector('.boutonOptions');
+let menuOptions = document.querySelector('.menuOptions');
+let closeOptions = document.querySelector('.closeOptions');
 
-/* ENREGISTREMENT DU JOEUR */
+/* ENREGISTREMENT DU JOUEUR */
 submitName.addEventListener('click', function() {
     if (inputName.value) {
         cardPlayer.style.display = "flex";
@@ -25,5 +28,14 @@ submitName.addEventListener('click', function() {
     } else {
         errorText.innerHTML = "Entrez votre nom !";
     }
-    
+})
+
+/* MENU OPTION */
+boutonOptions.addEventListener('click', function() {
+    menuOptions.classList.toggle('menuOptionsOpen');
+    boutonOptions.classList.toggle('boutonOptionsOpen');
+})
+closeOptions.addEventListener('click', function() {
+    menuOptions.classList.toggle('menuOptionsOpen');
+    boutonOptions.classList.toggle('boutonOptionsOpen');
 })
