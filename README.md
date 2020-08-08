@@ -4,23 +4,23 @@
 
 Un p'tit quiz avec 10 questions.
 
-Incrémentation du score quand la réponse est correcte,
-
-Décrémentation quand elle est incorrecte.
-
-Le but du jeu est d'arriver à 10 points à la fin du quiz.
 
 # Langages
 
 * HTML pour la structure des pages web
 * CSS pour la mise en forme
+* Flexbox / Media queries pour le responsive design
 * JavaScript pour les interactions
 
 # Déroulement du jeu
 
-Une page qui permet de se connecter.
+Une page qui permet de se connecter et de choisir un quiz.
 
 Une page par question. Chaque question aura quatre réponses différentes, dont une correcte.
+
+Incrémentation du score quand la réponse est correcte,
+
+Décrémentation quand elle est incorrecte.
 
 # Outils
 
@@ -35,22 +35,25 @@ Une page par question. Chaque question aura quatre réponses différentes, dont 
 * [Ionos](https://www.ionos.fr/) pour l'achat du nom de domaine
 * [FreePng.fr](https://www.freepng.fr/) pour les PNG.
 
-# Journal
+# Journal 2020
 
-* **03 Aout 2020**
+* **03 Aout**
     * Création de la page d'accueil.
 
-* **04 Aout 2020**
+* **04 Aout**
     * Refonte interface + Connexion du joueur.
 
-* **05Aout 2020**
+* **05 Aout**
     * Déplacement du menu Burger dans le CSS.
 
-* **06 Aout 2020**
+* **06 Aout**
     * Ajout de la fonctionnalité web storage.
     * Refonte de la carte joueur.
 
+* **07 Aout**
+    * Ajout du menu Options.
+
 # Jouer
 
-Jouer au jeu ici : [QuizBok](http://yannickbiheul.fr/quiz.html)
+Jouer au jeu ici (version alpha) : [QuizBok](http://yannickbiheul.fr/quiz.html)
     
