@@ -1,17 +1,24 @@
-/* VARIABLES */
+/* VARIABLES CONNEXION*/
 let inputName = document.querySelector('.inputName');
 let submitName = document.querySelector('.submitName');
+let connexion = document.querySelector('.connexion');
+let errorText = document.querySelector('.errorText');
+
+/* VARIABLES CARTE JOUEUR */
 let namePlayer = document.querySelector('.namePlayer');
 let scorePlayer = document.querySelector('.scorePlayer');
 let cardPlayer = document.querySelector('.cardPlayer');
-let connexion = document.querySelector('.connexion');
-let errorText = document.querySelector('.errorText');
-let choix = document.querySelector('.choix');
 let playerScore = "";
 let playerName = "";
+
+/* VARIABLES MENU OPTIONS */
 let boutonOptions = document.querySelector('.boutonOptions');
 let menuOptions = document.querySelector('.menuOptions');
 let closeOptions = document.querySelector('.closeOptions');
+
+/* VARIABLES CHOIX DU QUIZ */
+let choix = document.querySelector('.choix');
+
 
 /* ENREGISTREMENT DU JOUEUR */
 submitName.addEventListener('click', function() {
