@@ -53,6 +53,9 @@ Décrémentation quand elle est incorrecte.
 * **07 Aout**
     * Ajout du menu Options.
 
+* **09 Aout**
+    * Création de maquette pour l'accueil.
+
 # Jouer
 
 Jouer au jeu ici (version alpha) : [QuizBok](http://yannickbiheul.fr/quiz.html)
