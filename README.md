@@ -22,6 +22,11 @@ Incrémentation du score quand la réponse est correcte,
 
 Décrémentation quand elle est incorrecte.
 
+# Maquettes
+
+* **ACCUEIL**
+    ![ACCUEIL](maquettes/accueil.png)
+
 # Outils
 
 * [Visual Studio Code](https://code.visualstudio.com/) pour l'éditeur de texte
@@ -35,10 +40,6 @@ Décrémentation quand elle est incorrecte.
 * [Ionos](https://www.ionos.fr/) pour l'achat du nom de domaine
 * [FreePng.fr](https://www.freepng.fr/) pour les PNG.
 
-# Maquettes
-
-* **ACCUEIL**
-    ![ACCUEIL](maquettes/accueil.png)
 
 # Journal 2020
 
