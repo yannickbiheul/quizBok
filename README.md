@@ -2,7 +2,7 @@
 
 # Présentation du projet
 
-Un p'tit quiz avec 10 questions.
+Un jeu de quiz.
 
 
 # Langages
@@ -35,6 +35,11 @@ Décrémentation quand elle est incorrecte.
 * [Ionos](https://www.ionos.fr/) pour l'achat du nom de domaine
 * [FreePng.fr](https://www.freepng.fr/) pour les PNG.
 
+# Maquettes
+
+* **ACCUEIL**
+    ![ACCUEIL](maquettes/accueil.png)
+
 # Journal 2020
 
 * **03 Aout**
@@ -55,6 +60,7 @@ Décrémentation quand elle est incorrecte.
 
 * **09 Aout**
     * Création de maquette pour l'accueil.
+    * Ajout de la maquette sur le README.
 
 # Jouer
 
