@@ -24,8 +24,11 @@ Décrémentation quand elle est incorrecte.
 
 # Maquettes
 
-* **ACCUEIL**
+* **Accueil**
     ![ACCUEIL](maquettes/accueil.png)
+
+* **Accueil, une fois connecté**
+    ![Accueil2](maquettes/accueil2.png)
 
 # Outils
 
